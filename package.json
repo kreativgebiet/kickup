@@ -4,7 +4,7 @@
   "description": "Boilerplate for a combination of ECMAScript 6, Gulp.js and React.js",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "mocha"
+    "test": "gulp test"
   },
   "keywords": [
     "boilerplate",
