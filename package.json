@@ -1,0 +1,49 @@
+{
+  "name": "react-es6-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate for a combination of ECMAScript 6, Gulp.js and React.js",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "boilerplate",
+    "preset",
+    "gulp",
+    "es6",
+    "gulpjs",
+    "react",
+    "reactjs"
+  ],
+  "author": "Dominik Schmidt <nick@kreativgebiet.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "connect-livereload": "^0.5.3",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-karma": "0.0.4",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-postcss": "^6.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.1",
+    "gulp-util": "^3.0.6",
+    "karma": "^0.12.37",
+    "rimraf": "^2.4.3",
+    "serve-static": "^1.10.0",
+    "tiny-lr": "^0.2.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  }
+}
