@@ -1,5 +1,5 @@
 {
-  "name": "react-es6-boilerplate",
+  "name": "gulp-es6-boilerplate",
   "version": "0.0.1",
   "description": "Boilerplate for a combination of ECMAScript 6 and Gulp.js",
   "main": "gulpfile.js",
