@@ -12,15 +12,13 @@ import gutil from 'gulp-util';
 import sourcemaps from 'gulp-sourcemaps';
 import rename from 'gulp-rename';
 import minifyHtml from 'gulp-minify-html';
+import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
 
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import rimraf from 'rimraf';
 import autoprefixer from 'autoprefixer';
-
-import connect from 'gulp-connect';
-
 import stylePaths from 'style-paths';
 import browserify from 'browserify';
 import watchify from 'watchify';
