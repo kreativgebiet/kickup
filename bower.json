@@ -6,7 +6,7 @@
     "Dominik Schmidt <visualcake@me.com>"
   ],
   "description": "Boilerplate for a combination of ECMAScript 6 and Gulp.js",
-  "main": "gulpfile.js",
+  "main": "gulpfile.babel.js",
   "moduleType": [
     "es6",
     "node"
