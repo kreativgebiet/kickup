@@ -1,0 +1,29 @@
+{
+  "name": "gulp-es6-boilerplate",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kreativgebiet/gulp-es6-boilerplate",
+  "authors": [
+    "Dominik Schmidt <visualcake@me.com>"
+  ],
+  "description": "Boilerplate for a combination of ECMAScript 6 and Gulp.js",
+  "main": "gulpfile.js",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "boilerplate",
+    "preset",
+    "gulp",
+    "es6",
+    "gulpjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
