@@ -1,5 +1,6 @@
 # Distribution Folder
 dist
+bower_components/
 
 # Logs
 logs
