@@ -32,6 +32,7 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-karma": "0.0.4",
     "gulp-minify-html": "^1.0.4",
+    "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^6.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",

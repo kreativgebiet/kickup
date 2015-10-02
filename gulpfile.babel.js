@@ -12,6 +12,7 @@ import gutil from 'gulp-util';
 import sourcemaps from 'gulp-sourcemaps';
 import rename from 'gulp-rename';
 import minifyHtml from 'gulp-minify-html';
+import plumber from 'gulp-plumber';
 
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
@@ -52,6 +53,7 @@ function compileScripts (watch = false) {
 
   var rebundle = () => {
     b.bundle()
+      .pipe(plumber())
       .pipe(source('app.js'))
       .pipe(buffer())
       .pipe(uglify())
@@ -70,12 +72,14 @@ function compileScripts (watch = false) {
 
 gulp.task('markup', () => {
   gulp.src('./source/html/**/*.html')
+    .pipe(plumber())
     .pipe(minifyHtml())
     .pipe(gulp.dest(DEST_PATH));
 });
 
 gulp.task('styles', () => {
   gulp.src('./source/styles/main.scss')
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: stylePaths(['scss', 'sass'])
