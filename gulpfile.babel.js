@@ -20,9 +20,11 @@ import autoprefixer from 'autoprefixer';
 
 import connect from 'gulp-connect';
 
+import stylePaths from 'style-paths';
 import browserify from 'browserify';
 import watchify from 'watchify';
 import babelify from 'babelify';
+import debowerify from 'debowerify';
 
 const LR_PORT = 35729;
 const SERVER_PORT = 8888;
@@ -35,7 +37,10 @@ function compileScripts (watch = false) {
     entries: './source/scripts/main.js',
     extensions: [ '.jsx', '.js' ],
     debug: true,
-    transform: [ babelify ]
+    transform: [
+      babelify,
+      debowerify
+    ]
   };
 
   var b;
@@ -71,9 +76,11 @@ gulp.task('markup', () => {
 
 gulp.task('styles', () => {
   gulp.src('./source/styles/main.scss')
-    .pipe(sass())
-    .pipe(postcss([ autoprefixer({ browsers: [ 'last 2 versions' ] }) ]))
     .pipe(sourcemaps.init())
+    .pipe(sass({
+      includePaths: stylePaths(['scss', 'sass'])
+    }))
+    .pipe(postcss([ autoprefixer({ browsers: [ 'last 2 versions' ] }) ]))
     .pipe(csso())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(DEST_PATH + 'styles'));
