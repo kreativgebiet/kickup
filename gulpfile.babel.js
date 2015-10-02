@@ -63,7 +63,8 @@ function compileScripts (watch = false) {
         .pipe(uglify())
         .on('error', gutil.log)
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(DEST_PATH));
+      .pipe(gulp.dest(DEST_PATH))
+      .pipe(connect.reload());
   };
 
   b.on('update', rebundle);
@@ -74,7 +75,8 @@ gulp.task('markup', () => {
   gulp.src('./source/html/**/*.html')
     .pipe(plumber())
     .pipe(minifyHtml())
-    .pipe(gulp.dest(DEST_PATH));
+    .pipe(gulp.dest(DEST_PATH))
+    .pipe(connect.reload());
 });
 
 gulp.task('styles', () => {
@@ -87,7 +89,8 @@ gulp.task('styles', () => {
     .pipe(postcss([ autoprefixer({ browsers: [ 'last 2 versions' ] }) ]))
     .pipe(csso())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(DEST_PATH + 'styles'));
+    .pipe(gulp.dest(DEST_PATH + 'styles'))
+    .pipe(connect.reload());
 });
 
 gulp.task('server', next => {
@@ -115,6 +118,4 @@ gulp.task('default', () => {
 
   initTask('source/html/**/*.html', 'markup');
   initTask('source/styles/**/*.scss', 'styles');
-
-  gulp.watch([DEST_PATH + '/**/*'], connect.reload());
 });
