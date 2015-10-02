@@ -25,5 +25,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha",
+    "normalize-strings": "normalize#~1.0.4"
+  }
 }
