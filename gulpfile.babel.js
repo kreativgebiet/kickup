@@ -1,10 +1,7 @@
 import gulp from 'gulp';
 
-import concat from 'gulp-concat';
 import csso from 'gulp-csso';
 import eslint from 'gulp-eslint';
-import imagemin from 'gulp-imagemin';
-import karma from 'gulp-karma';
 import sass from 'gulp-sass';
 import uglify from 'gulp-uglify';
 import postcss from 'gulp-postcss';
@@ -17,11 +14,9 @@ import plumber from 'gulp-plumber';
 
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
-import rimraf from 'rimraf';
 import autoprefixer from 'autoprefixer';
 import stylePaths from 'style-paths';
 import browserify from 'browserify';
-import watchify from 'watchify';
 import babelify from 'babelify';
 import debowerify from 'debowerify';
 
