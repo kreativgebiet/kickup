@@ -11,6 +11,7 @@ import rename from 'gulp-rename';
 import minifyHtml from 'gulp-minify-html';
 import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
+import imagemin from 'gulp-imagemin';
 
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
@@ -66,7 +67,7 @@ function compileScripts (watch = false) {
 
 gulp.task('images', () => {
   gulp.src('./source/images/**/*')
-    // TODO: Minify images with imagemin
+    .pipe(imagemin())
     .pipe(gulp.dest(DEST_PATH + 'images'));
 });
 
