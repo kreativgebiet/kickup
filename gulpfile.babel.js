@@ -64,6 +64,12 @@ function compileScripts (watch = false) {
   return rebundle();
 };
 
+gulp.task('images', () => {
+  gulp.src('./source/images/**/*')
+    // TODO: Minify images with imagemin
+    .pipe(gulp.dest(DEST_PATH + 'images'));
+});
+
 gulp.task('markup', () => {
   gulp.src('./source/html/**/*.html')
     .pipe(plumber())
@@ -109,6 +115,7 @@ gulp.task('default', () => {
 
   compileScripts();
 
+  initTask('source/images/**/*', 'images');
   initTask('source/html/**/*.html', 'markup');
   initTask('source/styles/**/*.scss', 'styles');
 });
