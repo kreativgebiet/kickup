@@ -1,6 +1,8 @@
 ### gulp-es6-boilerplate
 > Boilerplate for a combination of ECMAScript 6, Gulp.js
 
+This is part of the [Laboratory Project](http://labs.kreativgebiet.com) from [Kreativgebiet](http://kreativgebiet.com)
+
 #### Requirements
 
 The only requirement needed is Node.js installed. The rest is up to the neat `npm install` command later.
@@ -17,13 +19,14 @@ You can also `git clone` or [download](https://github.com/kreativgebiet/gulp-es6
 After you have the files from this repository in your folder, be sure to run the following command to make sure all dependencies are installed:
 
 ```
-npm install
+$ npm install
+$ bower install
 ```
 
 To run the project run 
 
 ```
-gulp
+$ gulp
 ```
 
 ## License
