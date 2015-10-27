@@ -12,6 +12,7 @@ import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
 import imagemin from 'gulp-imagemin';
 
+import rimraf from 'rimraf';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import autoprefixer from 'autoprefixer';
@@ -20,6 +21,7 @@ import browserify from 'browserify';
 import watchify from 'watchify';
 import babelify from 'babelify';
 import debowerify from 'debowerify';
+import { argv } from 'yargs';
 import { assign } from 'lodash';
 import { join } from 'path';
 
@@ -54,6 +56,17 @@ function bundle() {
 gulp.task('scripts', bundle);
 bundler.on('update', bundle);
 bundler.on('log', gutil.log);
+
+gulp.task('clean', done => {
+  if (argv.clean) {
+    rimraf(DEST_PATH, err => {
+      if (err) gutil.log(err);
+      done();
+    });
+  } else {
+    done();
+  }
+});
 
 gulp.task('images', () => {
   gulp.src('./source/images/**/*')
@@ -91,7 +104,7 @@ gulp.task('server', () => {
   });
 });
 
-gulp.task('default', () => {
+gulp.task('default', ['clean'], () => {
   gulp.start('server');
 
   const initTask = (files, task) => {
