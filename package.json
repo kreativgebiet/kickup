@@ -35,9 +35,11 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.1",
     "gulp-util": "^3.0.6",
+    "lodash": "^3.10.1",
     "style-paths": "^0.1.1",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.5.0"
   },
   "dependencies": {
     "object-assign": "^4.0.1"

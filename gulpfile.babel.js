@@ -18,52 +18,43 @@ import buffer from 'vinyl-buffer';
 import autoprefixer from 'autoprefixer';
 import stylePaths from 'style-paths';
 import browserify from 'browserify';
+import watchify from 'watchify';
 import babelify from 'babelify';
 import debowerify from 'debowerify';
+import { assign } from 'lodash';
 
 const LR_PORT = 35729;
 const SERVER_PORT = 8888;
 const DEST_PATH = 'dist/';
 
-function compileScripts (watch = false) {
-  gutil.log('Starting browserify');
-
-  let entryConfig = {
-    entries: './source/scripts/main.js',
-    extensions: [ '.jsx', '.js' ],
-    debug: true,
-    transform: [
-      babelify,
-      debowerify
-    ]
-  };
-
-  var b;
-  if (watch) {
-    b = watchify(entryConfig);
-  } else {
-    b = browserify(entryConfig);
-  }
-
-  var rebundle = () => {
-    b.bundle()
-      .pipe(plumber())
-      .pipe(source('app.js'))
-      .pipe(buffer())
-      .pipe(uglify())
-      .pipe(eslint())
-      .pipe(rename('bundle.min.js'))
-      .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
-        .on('error', gutil.log)
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(DEST_PATH))
-      .pipe(connect.reload());
-  };
-
-  b.on('update', rebundle);
-  return rebundle();
+const customOpts = {
+  entries: './source/scripts/main.js',
+  extensions: [ '.jsx', '.js' ],
+  debug: true,
+  transform: [
+    babelify,
+    debowerify,
+  ],
 };
+
+const config = assign({}, watchify.args, customOpts);
+const bundler = watchify(browserify(config));
+
+function bundle() {
+  return bundler.bundle()
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source('bundle.min.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init())
+      .pipe(eslint())
+      .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(DEST_PATH));
+}
+
+gulp.task('scripts', bundle);
+bundler.on('update', bundle);
+bundler.on('log', gutil.log);
 
 gulp.task('images', () => {
   gulp.src('./source/images/**/*')
@@ -114,9 +105,8 @@ gulp.task('default', () => {
     }
   };
 
-  compileScripts();
-
   initTask('source/images/**/*', 'images');
   initTask('source/html/**/*.html', 'markup');
   initTask('source/styles/**/*.scss', 'styles');
+  initTask('source/scripts/**/*.js', 'scripts');
 });
