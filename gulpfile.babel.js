@@ -7,7 +7,6 @@ import uglify from 'gulp-uglify';
 import postcss from 'gulp-postcss';
 import gutil from 'gulp-util';
 import sourcemaps from 'gulp-sourcemaps';
-import rename from 'gulp-rename';
 import minifyHtml from 'gulp-minify-html';
 import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
@@ -24,7 +23,6 @@ import debowerify from 'debowerify';
 import { assign } from 'lodash';
 import { join } from 'path';
 
-const LR_PORT = 35729;
 const SERVER_PORT = 8888;
 const DEST_PATH = 'dist/';
 
@@ -76,7 +74,7 @@ gulp.task('styles', () => {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: stylePaths(['scss', 'sass'])
+      includePaths: stylePaths(['scss', 'sass']),
     }))
     .pipe(postcss([ autoprefixer({ browsers: [ 'last 2 versions' ] }) ]))
     .pipe(csso())
@@ -85,23 +83,23 @@ gulp.task('styles', () => {
     .pipe(connect.reload());
 });
 
-gulp.task('server', next => {
+gulp.task('server', () => {
   connect.server({
     port: SERVER_PORT,
     root: DEST_PATH,
-    livereload: true
+    livereload: true,
   });
 });
 
 gulp.task('default', () => {
   gulp.start('server');
 
-  var initTask = (files, task) => {
+  const initTask = (files, task) => {
     if ( typeof task === 'string' ) {
       gulp.start(task);
       gulp.watch(files, [ task ]);
     } else {
-      task.map(t => { gulp.start(t); });
+      task.map(subtask => gulp.start(subtask));
       gulp.watch(files, task);
     }
   };
