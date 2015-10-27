@@ -6,23 +6,10 @@
   justify-content: center;
   margin-bottom: 20px;
 
-  &-text {
-    position: relative;
-    background: white;
-    box-shadow: 0 0 20px rgba(black, 0.05), 0 0 5px rgba(black, 0.05);
-    line-height: 50px;
-    text-align: center;
-    border-radius: 2px;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #888;
-    transition: box-shadow 200ms linear;
-  }
-
-  &:hover &-text {
-    z-index: 2;
-    cursor: pointer;
-    box-shadow: 0 0 30px rgba(black, 0.1), 0 0 10px rgba(black, 0.05);
+  &:after {
+    display: block;
+    content: '';
+    background: #f6f6f6;
+    padding-bottom: 75%;
   }
 }
