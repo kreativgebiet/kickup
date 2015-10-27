@@ -11,6 +11,10 @@ import minifyHtml from 'gulp-minify-html';
 import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
 import imagemin from 'gulp-imagemin';
+import inject from 'gulp-inject';
+import svgmin from 'gulp-svgmin';
+import cheerio from 'gulp-cheerio';
+import svgstore from 'gulp-svgstore';
 
 import rimraf from 'rimraf';
 import source from 'vinyl-source-stream';
@@ -27,6 +31,8 @@ import { join } from 'path';
 
 const SERVER_PORT = 8888;
 const DEST_PATH = 'dist/';
+
+let sprites;
 
 const customOpts = {
   entries: './source/scripts/main.js',
@@ -69,14 +75,31 @@ gulp.task('clean', done => {
 });
 
 gulp.task('images', () => {
-  gulp.src('./source/images/**/*')
+  gulp.src('./source/images/**/*.{png,jpg,gif,jpeg}')
     .pipe(imagemin())
     .pipe(gulp.dest(join(DEST_PATH, 'images')));
 });
 
-gulp.task('markup', () => {
+gulp.task('sprites', () => {
+  sprites = gulp.src('./source/images/**/*.svg')
+    .pipe(svgmin())
+    .pipe(cheerio({
+      run: function run(dom) {
+        dom('[fill]').removeAttr('fill');
+      },
+      parserOptions: { xmlMode: true },
+    }))
+    .pipe(svgstore({ inlineSvg: true }));
+});
+
+gulp.task('markup', ['sprites'], () => {
+  const spriteTransform = (filePath, file) => {
+    return file.contents.toString();
+  };
+
   gulp.src('./source/html/**/*.html')
     .pipe(plumber())
+    .pipe(inject(sprites, { transform: spriteTransform }))
     .pipe(minifyHtml())
     .pipe(gulp.dest(DEST_PATH))
     .pipe(connect.reload());
