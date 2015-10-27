@@ -22,6 +22,7 @@ import watchify from 'watchify';
 import babelify from 'babelify';
 import debowerify from 'debowerify';
 import { assign } from 'lodash';
+import { join } from 'path';
 
 const LR_PORT = 35729;
 const SERVER_PORT = 8888;
@@ -59,7 +60,7 @@ bundler.on('log', gutil.log);
 gulp.task('images', () => {
   gulp.src('./source/images/**/*')
     .pipe(imagemin())
-    .pipe(gulp.dest(DEST_PATH + 'images'));
+    .pipe(gulp.dest(join(DEST_PATH, 'images')));
 });
 
 gulp.task('markup', () => {
@@ -80,7 +81,7 @@ gulp.task('styles', () => {
     .pipe(postcss([ autoprefixer({ browsers: [ 'last 2 versions' ] }) ]))
     .pipe(csso())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(DEST_PATH + 'styles'))
+    .pipe(gulp.dest(join(DEST_PATH, 'styles')))
     .pipe(connect.reload());
 });
 
