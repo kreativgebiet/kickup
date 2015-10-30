@@ -1,6 +1,6 @@
 {
   "name": "gulp-es6-boilerplate",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Boilerplate for a combination of ECMAScript 6 and Gulp.js",
   "repository": "git@github.com:kreativgebiet/gulp-es6-boilerplate.git",
   "main": "gulpfile.babel.js",
