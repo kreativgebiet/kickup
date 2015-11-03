@@ -1,7 +1,8 @@
-### gulp-es6-boilerplate
-> Boilerplate for a combination of ECMAScript 6, Gulp.js
+## gulp-es6-boilerplate ![](https://david-dm.org/kreativgebiet/gulp-es6-boilerplate/dev-status.svg)
 
 This is part of the [Laboratory Project](http://labs.kreativgebiet.com) from [Kreativgebiet](http://kreativgebiet.com)
+
+> Boilerplate for a combination of ECMAScript 6, Gulp.js
 
 #### Requirements
 
