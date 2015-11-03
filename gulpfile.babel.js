@@ -15,6 +15,7 @@ import inject from 'gulp-inject';
 import svgmin from 'gulp-svgmin';
 import cheerio from 'gulp-cheerio';
 import svgstore from 'gulp-svgstore';
+import changed from 'gulp-changed';
 
 import rimraf from 'rimraf';
 import source from 'vinyl-source-stream';
@@ -81,6 +82,7 @@ gulp.task('clean', done => {
 
 gulp.task('images', () => {
   gulp.src('./source/images/**/*.{png,jpg,gif,jpeg}')
+    .pipe(changed(join(DEST_PATH, 'images')))
     .pipe(imagemin())
     .pipe(gulp.dest(join(DEST_PATH, 'images')));
 });
