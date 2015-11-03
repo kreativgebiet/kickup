@@ -49,7 +49,12 @@ const bundler = watchify(browserify(config));
 
 function bundle() {
   return bundler.bundle()
-    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .on('error', (err) => {
+      gutil.log(`Compiling error in file ${err.filename} on line ${err.loc.line}, column ${err.loc.column}`);
+      err.codeFrame.split('\n').forEach(str => {
+        gutil.log(str);
+      });
+    })
     .pipe(source('bundle.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init())
