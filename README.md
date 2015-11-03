@@ -1,4 +1,4 @@
-## gulp-es6-boilerplate ![](https://david-dm.org/kreativgebiet/gulp-es6-boilerplate/dev-status.svg)
+## gulp-es6-boilerplate ![https://david-dm.org/kreativgebiet/gulp-es6-boilerplate](https://david-dm.org/kreativgebiet/gulp-es6-boilerplate/dev-status.svg)
 
 This is part of the [Laboratory Project](http://labs.kreativgebiet.com) from [Kreativgebiet](http://kreativgebiet.com)
 
