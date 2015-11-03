@@ -16,6 +16,7 @@ import svgmin from 'gulp-svgmin';
 import cheerio from 'gulp-cheerio';
 import svgstore from 'gulp-svgstore';
 import changed from 'gulp-changed';
+import ghPages from 'gulp-gh-pages';
 
 import rimraf from 'rimraf';
 import source from 'vinyl-source-stream';
@@ -124,6 +125,11 @@ gulp.task('styles', () => {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(join(DEST_PATH, 'styles')))
     .pipe(connect.reload());
+});
+
+gulp.task('deploy', () => {
+  gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('server', () => {
