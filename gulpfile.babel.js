@@ -129,6 +129,7 @@ gulp.task('server', () => {
 
 gulp.task('default', ['clean'], () => {
   gulp.start('server');
+  gulp.start('scripts');
 
   const initTask = (files, task) => {
     if ( typeof task === 'string' ) {
@@ -143,5 +144,4 @@ gulp.task('default', ['clean'], () => {
   initTask('source/images/**/*', 'images');
   initTask('source/html/**/*.html', 'markup');
   initTask('source/styles/**/*.scss', 'styles');
-  initTask('source/scripts/**/*.js', 'scripts');
 });
