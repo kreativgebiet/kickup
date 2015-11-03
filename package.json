@@ -50,7 +50,5 @@
     "watchify": "^3.5.0",
     "yargs": "^3.29.0"
   },
-  "dependencies": {
-    "object-assign": "^4.0.1"
-  }
+  "dependencies": {}
 }
