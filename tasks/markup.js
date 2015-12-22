@@ -8,12 +8,12 @@ import plumber from 'gulp-plumber';
 import { join } from 'path';
 
 import browserSync from './connect';
-import { dest } from './config';
+import { src, dest } from './config';
 
 let sprites;
 
 gulp.task('sprites', () => {
-  sprites = gulp.src('./source/images/**/*.svg')
+  sprites = gulp.src(join(src, 'images', '**/*.svg'))
     .pipe(svgmin())
     .pipe(cheerio({
       run: function run(dom) {
@@ -29,15 +29,17 @@ gulp.task('markup', ['sprites'], () => {
     return file.contents.toString();
   };
 
+  const mainPath = join(src, 'html', '**/*.html');
+  const includesPath = join('!.', src, 'html', 'includes', '**/*.html');
+
   gulp.src([
-    './source/html/**/*.html',
-    '!./source/html/includes/**/*.html',
+    mainPath,
+    includesPath,
   ])
     .pipe(plumber())
     .pipe(inject(sprites, { transform: spriteTransform }))
-    // .pipe(minifyHtml())
     .pipe(fileinclude({
-      basepath: join(__dirname, '..', 'source', 'html'),
+      basepath: join(__dirname, '..', src, 'html'),
     }))
     .pipe(gulp.dest(dest))
     .pipe(browserSync.stream());

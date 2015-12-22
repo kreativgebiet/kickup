@@ -7,11 +7,11 @@ import csso from 'gulp-csso';
 import autoprefixer from 'autoprefixer';
 import stylePaths from 'style-paths';
 import { join } from 'path';
-import { dest } from './config';
+import { src, dest } from './config';
 import browserSync from './connect';
 
 gulp.task('styles', () => {
-  gulp.src('./source/styles/main.scss')
+  gulp.src(join(src, 'styles', 'main.scss'))
     .pipe(plumber())
     .pipe(sass({
       includePaths: stylePaths(['scss', 'sass']),

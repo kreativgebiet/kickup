@@ -13,10 +13,11 @@ import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 
 import browserSync from './connect';
-import { dest } from './config';
+import { join } from 'path';
+import { src, dest } from './config';
 
 const customOpts = {
-  entries: './source/scripts/main.js',
+  entries: join(src, 'scripts', 'main.js'),
   extensions: [ '.jsx', '.js' ],
   debug: true,
   transform: [

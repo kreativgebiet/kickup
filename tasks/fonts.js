@@ -1,8 +1,8 @@
 import gulp from 'gulp';
 import { join } from 'path';
-import { dest } from './config';
+import { src, dest } from './config';
 
 gulp.task('fonts', () => {
-  gulp.src('./source/fonts/**/*')
+  gulp.src(join(src, 'fonts', '**/*'))
     .pipe(gulp.dest(join(dest, 'fonts')));
 });

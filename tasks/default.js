@@ -1,4 +1,6 @@
 import gulp from 'gulp';
+import { src } from './config';
+import { join } from 'path';
 
 gulp.task('default', ['clean'], () => {
   gulp.start('server');
@@ -15,7 +17,7 @@ gulp.task('default', ['clean'], () => {
     }
   };
 
-  initTask('source/images/**/*', 'images');
-  initTask('source/html/**/*.html', 'markup');
-  initTask('source/styles/**/*.scss', 'styles');
+  initTask(join(src, 'images', '**/*'), 'images');
+  initTask(join(src, 'html', '**/*.html'), 'markup');
+  initTask(join(src, 'styles', '**/*.{scss,sass}'), 'styles');
 });

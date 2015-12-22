@@ -1,4 +1,6 @@
 module.exports = {
+  src: 'source/',
+  dest: 'dist/',
   server: {
     port: 8888,
     path: 'dist/',
@@ -9,5 +11,4 @@ module.exports = {
     dest: '',
     user: process.env.RSYNC_USERNAME || false,
   },
-  dest: 'dist/',
 };
