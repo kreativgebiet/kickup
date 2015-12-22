@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-// import connect from 'gulp-connect';
 import { server, dest } from './config';
 
 const browserSync = require('browser-sync').create();

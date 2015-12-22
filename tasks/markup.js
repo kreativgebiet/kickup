@@ -16,8 +16,8 @@ gulp.task('sprites', () => {
   sprites = gulp.src(join(src, 'images', '**/*.svg'))
     .pipe(svgmin())
     .pipe(cheerio({
-      run: function run(dom) {
-        dom('[fill]').removeAttr('fill');
+      run: function run($) {
+        $('[fill]').removeAttr('fill');
       },
       parserOptions: { xmlMode: true },
     }))
