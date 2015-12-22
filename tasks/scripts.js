@@ -28,6 +28,7 @@ const customOpts = {
 
 const config = assign({}, watchify.args, customOpts);
 const bundler = watchify(browserify(config));
+const buildBundler = browserify(config);
 
 function bundle() {
   return bundler.bundle()
@@ -40,6 +41,18 @@ function bundle() {
     .pipe(browserSync.stream());
 }
 
+function buildBundle() {
+  return buildBundler.bundle()
+    .on('error', err => gutil.log.call(this, err))
+    .pipe(source('bundle.min.js'))
+    .pipe(buffer())
+    .pipe(eslint())
+    .pipe(uglify())
+    .pipe(gulp.dest(dest))
+    .pipe(browserSync.stream());
+}
+
 gulp.task('scripts', bundle);
+gulp.task('scripts:build', buildBundle);
 bundler.on('update', bundle);
 bundler.on('log', gutil.log);
