@@ -1,35 +1,34 @@
-## reload [![Dependency Status](https://david-dm.org/kreativgebiet/reload/dev-status.svg)](https://david-dm.org/kreativgebiet/reload)
+# kickup [![Dependency Status](https://david-dm.org/kreativgebiet/kickup/dev-status.svg)](https://david-dm.org/kreativgebiet/kickup)
 
 This is part of the [Laboratory Project](http://labs.kreativgebiet.com) from [Kreativgebiet](http://kreativgebiet.com)
 
 > Boilerplate for a combination of ECMAScript 6, Gulp.js
 
-#### Requirements
+### Requirements
 
 The only requirement needed is Node.js installed. The rest is up to the neat `npm install` command later.
 
-#### Getting Started
+### Getting Started
 Change into your directory and run the following command in the Terminal of your choice:
 
 ```
-curl -fsSL https://github.com/kreativgebiet/reload/archive/0.3.1.tar.gz | tar -xz --strip-components 1
+curl -fsSL https://github.com/kreativgebiet/kickup/archive/master.tar.gz | tar -xz --strip-components 1
 ```
 
-You can also `git clone` or [download](https://github.com/kreativgebiet/reload/archive/0.3.1.zip) this repo and remove the `.git` folder.
+You can also `git clone` or [download](https://github.com/kreativgebiet/kickup/archive/master.zip) this repo and remove the `.git` folder.
 
-After you have the files from this repository in your folder, be sure to run the following command to make sure all dependencies are installed:
+#### Install dependencies
 
 ```
-$ npm install
-$ bower install
+$ npm install && bower install
 ```
 
-To run the project run
+#### Run
 
 ```
 $ gulp
 ```
 
-## License
+### License
 
 MIT © [Kreativgebiet](http://kreativgebiet.com)

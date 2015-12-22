@@ -1,8 +1,8 @@
 {
-  "name": "gulp-es6-boilerplate",
+  "name": "kickup",
   "version": "0.3.1",
   "description": "Boilerplate for a combination of ECMAScript 6 and Gulp.js",
-  "repository": "git@github.com:kreativgebiet/gulp-es6-boilerplate.git",
+  "repository": "git@github.com:kreativgebiet/kickup.git",
   "main": "gulpfile.babel.js",
   "scripts": {
     "test": "gulp test"
@@ -24,6 +24,7 @@
     "babelify": "^7.2.0",
     "browserify": "^11.2.0",
     "debowerify": "^1.3.1",
+    "dotenv": "^1.2.0",
     "eslint": "^1.7.3",
     "eslint-config-airbnb": "^0.1.0",
     "gulp": "^3.9.0",
@@ -45,6 +46,7 @@
     "gulp-uglify": "^1.4.1",
     "gulp-util": "^3.0.6",
     "lodash": "^3.10.1",
+    "require-dir": "^0.3.0",
     "rimraf": "^2.4.3",
     "style-paths": "^0.1.1",
     "vinyl-buffer": "^1.0.0",
