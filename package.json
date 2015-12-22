@@ -1,6 +1,6 @@
 {
   "name": "kickup",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Boilerplate for a combination of ECMAScript 6 and Gulp.js",
   "repository": "git@github.com:kreativgebiet/kickup.git",
   "main": "gulpfile.babel.js",
