@@ -35,7 +35,6 @@ function bundle() {
     .on('error', err => gutil.log.call(this, err))
     .pipe(source('bundle.min.js'))
     .pipe(buffer())
-    .pipe(eslint())
     .pipe(uglify())
     .pipe(gulp.dest(dest))
     .pipe(browserSync.stream());
@@ -46,7 +45,6 @@ function buildBundle() {
     .on('error', err => gutil.log.call(this, err))
     .pipe(source('bundle.min.js'))
     .pipe(buffer())
-    .pipe(eslint())
     .pipe(uglify())
     .pipe(gulp.dest(dest))
     .pipe(browserSync.stream());
