@@ -1,8 +1,8 @@
-# kickup [![Dependency Status](https://david-dm.org/kreativgebiet/kickup/dev-status.svg)](https://david-dm.org/kreativgebiet/kickup)
+## :gem: kickup
 
-This is part of the [Laboratory Project](http://labs.kreativgebiet.com) from [Kreativgebiet](http://kreativgebiet.com)
+[![Dependency Status](https://david-dm.org/kreativgebiet/kickup/dev-status.svg)](https://david-dm.org/kreativgebiet/kickup) [![Part of the Kreativgebiet - Laboratory Project](https://img.shields.io/badge/laboratory-project-red.svg)](http://labs.kreativgebiet.com/)
 
-> Boilerplate for a combination of ECMAScript 6, Gulp.js
+Boilerplate for a combination of ECMAScript 6, Gulp.js
 
 ### Requirements
 
