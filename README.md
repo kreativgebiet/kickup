@@ -17,6 +17,18 @@ curl -fsSL https://github.com/kreativgebiet/kickup/archive/master.tar.gz | tar -
 
 You can also `git clone` or [download](https://github.com/kreativgebiet/kickup/archive/master.zip) this repo and remove the `.git` folder.
 
+### Install dependencies
+
+```bash
+npm install && bower install
+```
+
+### Run
+
+```bash
+gulp
+```
+
 ## What's included?
 
 ### Technology
@@ -42,18 +54,6 @@ You can also `git clone` or [download](https://github.com/kreativgebiet/kickup/a
 ### Miscellaneous
 
 - [SVGStore](https://github.com/w0rm/gulp-svgstore) – Combine svg files into one with <symbol> elements.
-
-### Install dependencies
-
-```bash
-npm install && bower install
-```
-
-### Run
-
-```bash
-gulp
-```
 
 ## License
 
