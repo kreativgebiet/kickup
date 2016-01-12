@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
-import eslint from 'gulp-eslint';
 import uglify from 'gulp-uglify';
 
 import browserify from 'browserify';
