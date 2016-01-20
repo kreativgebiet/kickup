@@ -45,6 +45,7 @@
     "require-dir": "^0.3.0",
     "rimraf": "^2.4.3",
     "rsyncwrapper": "^0.4.3",
+    "run-sequence": "^1.1.5",
     "style-paths": "^0.1.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
