@@ -1,9 +1,6 @@
 import gulp from 'gulp';
+import sequence from 'run-sequence';
 
 gulp.task('build', ['clean'], () => {
-  gulp.start('scripts:build');
-  gulp.start('fonts');
-  gulp.start('images');
-  gulp.start('markup');
-  gulp.start('styles');
+  sequence('images:build', 'styles:build', 'scripts:build', 'fonts', 'markup');
 });

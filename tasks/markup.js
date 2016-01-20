@@ -3,6 +3,7 @@ import svgmin from 'gulp-svgmin';
 import cheerio from 'gulp-cheerio';
 import svgstore from 'gulp-svgstore';
 import inject from 'gulp-inject';
+import revReplace from 'gulp-rev-replace';
 import fileinclude from 'gulp-file-include';
 import plumber from 'gulp-plumber';
 import { join } from 'path';
@@ -31,6 +32,7 @@ gulp.task('markup', ['sprites'], () => {
 
   const mainPath = join(src, 'html', '**/*.html');
   const includesPath = join('!.', src, 'html', 'includes', '**/*.html');
+  const manifest = gulp.src(join(dest, '..', 'rev-manifest.json'));
 
   gulp.src([
     mainPath,
@@ -41,6 +43,7 @@ gulp.task('markup', ['sprites'], () => {
     .pipe(fileinclude({
       basepath: join(__dirname, '..', src, 'html'),
     }))
+    .pipe(revReplace({ manifest }))
     .pipe(gulp.dest(dest))
     .pipe(browserSync.stream());
 });

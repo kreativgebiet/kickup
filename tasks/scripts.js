@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import uglify from 'gulp-uglify';
+import rev from 'gulp-rev';
 
 import browserify from 'browserify';
 import watchify from 'watchify';
@@ -17,7 +18,7 @@ import { src, dest } from './config';
 
 const customOpts = {
   entries: join(src, 'scripts', 'main.js'),
-  extensions: [ '.jsx', '.js' ],
+  extensions: ['.jsx', '.js'],
   debug: true,
   transform: [
     babelify,
@@ -32,9 +33,8 @@ const buildBundler = browserify(config);
 function bundle() {
   return bundler.bundle()
     .on('error', err => gutil.log.call(this, err))
-    .pipe(source('bundle.min.js'))
+    .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(uglify())
     .pipe(gulp.dest(dest))
     .pipe(browserSync.stream());
 }
@@ -45,8 +45,10 @@ function buildBundle() {
     .pipe(source('bundle.min.js'))
     .pipe(buffer())
     .pipe(uglify())
+    .pipe(rev())
     .pipe(gulp.dest(dest))
-    .pipe(browserSync.stream());
+    .pipe(rev.manifest({ merge: true }))
+    .pipe(gulp.dest(join(dest, '..')));
 }
 
 gulp.task('scripts', bundle);
