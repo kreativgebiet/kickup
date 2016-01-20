@@ -2,7 +2,7 @@
 
 [![Dependency Status](https://david-dm.org/kreativgebiet/kickup/dev-status.svg)](https://david-dm.org/kreativgebiet/kickup) [![Part of the Kreativgebiet - Laboratory Project](https://img.shields.io/badge/laboratory-project-red.svg)](http://labs.kreativgebiet.com/)
 
-Boilerplate for a combination of ECMAScript 6, Gulp.js
+Boilerplate for your perfect front-end environment (utilizing Gulp.js, Babel, and more)
 
 ## Requirements
 
