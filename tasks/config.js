@@ -9,6 +9,6 @@ module.exports = {
   remote: {
     host: '',
     dest: '',
-    user: process.env.RSYNC_USERNAME || false,
+    user: '',
   },
 };
