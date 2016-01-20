@@ -14,8 +14,3 @@ gulp.task('deploy:rsync', done => {
     exclude: ['styleguide/', '.DS_Store'],
   }, done);
 });
-
-gulp.task('deploy:github', () => {
-  gulp.src(join(dest, '**/*'))
-    .pipe(ghPages());
-});
