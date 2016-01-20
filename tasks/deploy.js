@@ -1,7 +1,5 @@
 import gulp from 'gulp';
-import ghPages from 'gulp-gh-pages';
 import { rsync } from 'rsyncwrapper';
-import { join } from 'path';
 import { dest, remote } from './config';
 
 gulp.task('deploy:rsync', done => {
