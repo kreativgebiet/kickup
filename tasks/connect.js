@@ -11,8 +11,8 @@ gulp.task('server', () => {
       baseDir: dest,
     },
     ui: {
-      port: server.port + 1
-    }
+      port: server.port + 1,
+    },
   });
 });
 
