@@ -42,7 +42,7 @@ function bundle() {
 function buildBundle() {
   return buildBundler.bundle()
     .on('error', err => gutil.log.call(this, err))
-    .pipe(source('bundle.min.js'))
+    .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(rev())
