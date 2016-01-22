@@ -1,8 +1,8 @@
 import gulp from 'gulp';
-import { rsync } from 'rsyncwrapper';
+import rsync from 'rsyncwrapper';
 import { dest, remote } from './config';
 
-gulp.task('deploy:rsync', done => {
+gulp.task('deploy', done => {
   rsync({
     src: dest,
     dest: `${remote.user}@${remote.host}:${remote.dest}`,
