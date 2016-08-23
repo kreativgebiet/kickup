@@ -1,3 +1,5 @@
+<img src="http://static.kreativgebiet.com/deprecation-banner.svg" style="width: 100%" alt="Deprecation Warning" />
+
 # :gem: kickup
 
 [![Dependency Status](https://david-dm.org/kreativgebiet/kickup/dev-status.svg)](https://david-dm.org/kreativgebiet/kickup) [![Part of the Kreativgebiet - Laboratory Project](https://img.shields.io/badge/laboratory-project-red.svg)](http://labs.kreativgebiet.com/)
