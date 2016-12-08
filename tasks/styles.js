@@ -1,24 +1,33 @@
+
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import postcss from 'gulp-postcss';
+import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import csso from 'gulp-csso';
+import rucksack from 'gulp-rucksack';
 import rev from 'gulp-rev';
-import revReplace from 'gulp-rev-replace';
 
 import autoprefixer from 'autoprefixer';
-import stylePaths from 'style-paths';
 import { join } from 'path';
-import { src, dest } from './config';
+import { libraries, server } from '../config';
 import browserSync from './connect';
+
+const { src, dest } = server
+
+const sassSettings = {
+  includePaths: libraries.scss,
+};
 
 gulp.task('styles', () => {
   gulp.src(join(src, 'styles', 'main.scss'))
     .pipe(plumber())
-    .pipe(sass({
-      includePaths: stylePaths(['scss', 'sass']),
-    }))
-    .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'] })]))
+    .pipe(sourcemaps.init())
+      .pipe(sass(sassSettings))
+      .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'] })]))
+      .pipe(rucksack())
+      .pipe(csso())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(join(dest, 'styles')))
     .pipe(browserSync.stream());
 });
@@ -28,14 +37,9 @@ gulp.task('styles:build', () => {
 
   gulp.src(join(src, 'styles', 'main.scss'))
     .pipe(plumber())
-    .pipe(sass({
-      includePaths: stylePaths(['scss', 'sass']),
-    }))
+    .pipe(sass(sassSettings))
     .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'] })]))
+    .pipe(rucksack())
     .pipe(csso())
-    .pipe(revReplace({ manifest }))
-    .pipe(rev())
-    .pipe(gulp.dest(join(dest, 'styles')))
-    .pipe(rev.manifest({ merge: true }))
-    .pipe(gulp.dest(join(dest, '..')));
+    .pipe(gulp.dest(join(dest, 'styles')));
 });

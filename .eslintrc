@@ -1,5 +1,9 @@
 {
-  "extends": "airbnb/base",
+  "extends": "airbnb-base",
+  "rules": {
+    "semi": 0,
+    "import/no-extraneous-dependencies": 0,
+  },
   "globals": {
     "$": false
   }

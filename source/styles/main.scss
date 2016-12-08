@@ -10,30 +10,29 @@
 /**! Site settings
  ================================= */
 
-@import "site-settings";
+@import 'site-settings';
 
 
 /**! Bower Components
  ================================= */
 
-@import "normalize";
-@import 'bootstrap-grid';
+@import 'bootstrap';
 
 
 /**! Base
  ================================= */
 
-@import "base";
+@import 'base';
 
 
 /**! Layouts
  ================================= */
 
-@import "layout/header";
+@import 'layout/header';
 
 
 /**! Modules
  ================================= */
 
-@import "modules/welcome";
-@import "modules/grid";
+@import 'modules/welcome';
+@import 'modules/grid';

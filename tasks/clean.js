@@ -1,8 +1,8 @@
-import gulp from 'gulp';
 
+import gulp from 'gulp';
 import rimraf from 'rimraf';
-import { dest } from './config';
+import { server } from '../config';
 
 gulp.task('clean', done => {
-  rimraf(dest, done);
+  rimraf(server.dest, done);
 });

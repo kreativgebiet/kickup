@@ -1,24 +1,21 @@
+
 import gulp from 'gulp';
 import changed from 'gulp-changed';
-import imagemin from 'gulp-imagemin';
-import rev from 'gulp-rev';
-
+import imageMinify from 'gulp-imagemin';
 import { join } from 'path';
+
 import browserSync from './connect';
-import { src, dest } from './config';
+import { server, watch, imagemin } from '../config';
 
 gulp.task('images', () => {
-  gulp.src(join(src, 'images', '**/*'))
-    .pipe(changed(join(dest, 'images')))
-    .pipe(gulp.dest(join(dest, 'images')))
+  gulp.src(watch.images)
+    .pipe(changed(join(server.dest, 'images')))
+    .pipe(gulp.dest(join(server.dest, 'images')))
     .pipe(browserSync.stream());
 });
 
 gulp.task('images:build', () => {
-  gulp.src(join(src, 'images', '**/*'))
-    .pipe(imagemin())
-    .pipe(rev())
-    .pipe(gulp.dest(join(dest, 'images')))
-    .pipe(rev.manifest({ merge: true }))
-    .pipe(gulp.dest(join(dest, '..')));
+  gulp.src(watch.images)
+    .pipe(imageMinify(imagemin))
+    .pipe(gulp.dest(join(server.dest, 'images')));
 });

@@ -6,7 +6,8 @@ Boilerplate for your perfect front-end environment (utilizing Gulp.js, Babel, an
 
 ## Requirements
 
-The only requirement needed is Node.js installed. The rest is up to the neat `npm install` command later.
+- Working personal computer
+- Node.js
 
 ## Getting Started
 Change into your directory and run the following command in the Terminal of your choice:
@@ -20,7 +21,7 @@ You can also `git clone` or [download](https://github.com/kreativgebiet/kickup/a
 ### Install dependencies
 
 ```bash
-npm install && bower install
+yarn install
 ```
 
 ### Run
