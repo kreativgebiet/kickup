@@ -6,7 +6,6 @@ import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import csso from 'gulp-csso';
 import rucksack from 'gulp-rucksack';
-import rev from 'gulp-rev';
 
 import autoprefixer from 'autoprefixer';
 import { join } from 'path';
@@ -33,8 +32,6 @@ gulp.task('styles', () => {
 });
 
 gulp.task('styles:build', () => {
-  const manifest = gulp.src(join(dest, '..', 'rev-manifest.json'));
-
   gulp.src(join(src, 'styles', 'main.scss'))
     .pipe(plumber())
     .pipe(sass(sassSettings))

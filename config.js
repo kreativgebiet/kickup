@@ -21,7 +21,7 @@ module.exports = {
     scss: [
       join(__dirname, 'node_modules', 'bootstrap', 'scss'),
       // TODO: Add some more libraries to include them in your scss files
-    ]
+    ],
   },
 
   // ----------------------------
@@ -29,7 +29,7 @@ module.exports = {
   // ----------------------------
   rsync: {
     src: `${distFolder}/`,
-    dest: `user@host:folder/to/script`,
+    dest: 'user@host:folder/to/script',
     ssh: true,
     recursive: true,
     deleteAll: true,

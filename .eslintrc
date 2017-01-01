@@ -1,10 +1,18 @@
 {
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended"
+  ],
   "rules": {
     "semi": 0,
+    "flowtype-errors/show-errors": 2,
     "import/no-extraneous-dependencies": 0,
   },
   "globals": {
     "$": false
-  }
+  },
+  "plugins": [
+    "flowtype",
+    "flowtype-errors"
+  ],
 }
