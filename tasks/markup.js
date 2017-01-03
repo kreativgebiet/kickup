@@ -3,7 +3,6 @@ import gulp from 'gulp';
 import svgmin from 'gulp-svgmin';
 import cheerio from 'gulp-cheerio';
 import svgstore from 'gulp-svgstore';
-import inject from 'gulp-inject';
 import ejs from 'gulp-ejs';
 import rename from 'gulp-rename';
 import plumber from 'gulp-plumber';

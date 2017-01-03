@@ -2,7 +2,6 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import uglify from 'gulp-uglify';
-import rev from 'gulp-rev';
 import browserify from 'browserify';
 import watchify from 'watchify';
 import source from 'vinyl-source-stream';
@@ -12,7 +11,7 @@ import { join } from 'path';
 import browserSync from './connect';
 import { libraries, server, browserify as blabla } from '../config';
 
-const { src, dest } = server
+const { dest } = server
 const config = Object.assign({}, watchify.args, blabla);
 const bundler = watchify(browserify(config));
 const buildBundler = browserify(config);
