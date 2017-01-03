@@ -8,6 +8,6 @@ gulp.task('build', ['clean'], () => {
     'scripts:build',
     'scripts:libs',
     'fonts',
-    'markup'
+    'markup',
   );
 });
