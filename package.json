@@ -27,7 +27,7 @@
     "bootstrap": "4.0.0-alpha.5",
     "browser-sync": "^2.18.5",
     "browserify": "^13.1.1",
-    "eslint": "^3.12.2",
+    "eslint": "^3.16.1",
     "eslint-config-airbnb-base": "latest",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-flowtype": "^2.29.2",
