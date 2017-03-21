@@ -30,7 +30,7 @@
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "latest",
     "eslint-formatter-pretty": "^1.1.0",
-    "eslint-plugin-flowtype": "^2.29.2",
+    "eslint-plugin-flowtype": "^2.30.4",
     "eslint-plugin-flowtype-errors": "^2.0.3",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
