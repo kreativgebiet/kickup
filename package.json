@@ -42,7 +42,7 @@
     "gulp-csso": "^2.0.0",
     "gulp-ejs": "^2.3.0",
     "gulp-file-include": "^1.0.0",
-    "gulp-imagemin": "^3.1.1",
+    "gulp-imagemin": "^3.2.0",
     "gulp-inject": "^4.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
