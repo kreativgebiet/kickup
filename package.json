@@ -53,7 +53,7 @@
     "gulp-sourcemaps": "^2.2.2",
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.1.0",
-    "gulp-uglify": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "require-dir": "^0.3.1",
     "rimraf": "^2.5.4",
