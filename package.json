@@ -33,7 +33,7 @@
     "eslint-plugin-flowtype": "^2.29.2",
     "eslint-plugin-flowtype-errors": "^3.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "flow-bin": "latest",
     "gulp": "^3.9.1",
     "gulp-changed": "^2.0.0",
