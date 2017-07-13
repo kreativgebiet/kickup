@@ -18,7 +18,7 @@
   "author": "Dominik Schmidt <nick@kreativgebiet.com>",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.18.0",
+    "ava": "^0.21.0",
     "autoprefixer": "^7.0.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
