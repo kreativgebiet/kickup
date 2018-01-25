@@ -1,0 +1,10 @@
+.sample {
+  background-color: #f5f5f5;
+  padding: $sectionPadding 0;
+  text-align: center;
+
+  svg {
+    max-width: 100px;
+    fill: orange;
+  }
+}

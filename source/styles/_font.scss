@@ -1,0 +1,67 @@
+
+body {
+  font-family: $family;
+  font-size: $em;
+  color: $color;
+  line-height: $lineheight;
+  font-weight: $light;
+}
+
+a {
+  color: $color;
+  text-decoration: none;
+  font-weight: $light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $colorHeading;
+  font-weight: $medium;
+  line-height: $lineheightHeadline;
+}
+
+h1, .h1 {
+  @include h1;
+}
+
+h2, .h2 {
+  @include h2;
+}
+
+h3, .h3 {
+  @include h3;
+}
+
+h4, .h4 {
+  @include h4;
+}
+
+h5, .h5 {
+  @include h5;
+}
+
+strong {
+  font-weight: $medium;
+}
+.big {
+  font-size: 1em;
+
+  @include media(m) {
+    font-size: larger;
+  }
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid $colorBorder;
+  margin: 1em 0;
+}
+
+.link {
+  color: $colorLink;
+  text-decoration: none;
+  font-weight: $medium;
+
+  &:hover {
+    color: lighten($colorLink, 10%)
+  }
+}

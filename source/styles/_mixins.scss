@@ -1,0 +1,104 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin hideScrollBar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow: -moz-scrollbars-none;
+}
+
+@mixin aspectRatio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin letterSpacing {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+@mixin inverseFontColor {
+  h1, h2, h3, h4, h5,
+  .h1, .h2, .h3, .h4, h6,
+  p,
+  .font--link,
+  .more__link {
+    color: #fff;
+    border-color: #fff;
+  }
+  color: #fff;
+  hr {
+    border-bottom: 1px solid rgba(255,255,255, 0.3);
+  }
+}
+
+@mixin h1 {
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  @include media(m) {
+    font-size: 3em;
+  }
+}
+
+@mixin h2 {
+  font-size: 1.75em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  @include media(m) {
+    font-size: 2em;
+  }
+}
+
+@mixin h3 {
+  font-size: 1.5em;
+  line-height: 1.75;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+@mixin h4 {
+  font-size: 1.25em;
+  line-height: 1.75;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+}
+
+@mixin h5 {
+  font-size: 1em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+}
+
+@mixin p {
+  font-weight: $regular;
+  line-height: $lineheight;
+  font-size: $em;
+}
+
+@mixin reduceFontMargin {
+  h1, h2, h3, h4, h5,
+  .h1, .h2, .h3, .h4, h6,
+  p {
+    margin: 0.35em 0;
+  }
+}

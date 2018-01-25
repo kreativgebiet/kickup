@@ -19,7 +19,7 @@ module.exports = {
 
     // The entries in scss are needed to be *folders*
     scss: [
-      join(__dirname, 'node_modules', 'bootstrap', 'scss'),
+      join(__dirname, 'node_modules', 'scss'),
       // TODO: Add some more libraries to include them in your scss files
     ],
   },

@@ -2,4 +2,56 @@
   Site Settings
   ===================== */
 
-$enable-flex: true; // Remove for legacy support
+//
+// units
+//
+$em: 18px;
+$fontSmall: 0.8em;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+
+//
+// fonts
+//
+$family: 'Helvetica, Arial', sans-serif;
+$lineheight: 1.85;
+$lineheightHeadline: 1.4;
+
+// color - shades
+$color: #333;
+$color2: #444;
+$colorLink: #4ba0ec;
+$colorHeading: #555;
+
+// color - band colors
+$colorAlpha: #333;
+$colorBravo: #333;
+$colorCharlie: #333;
+
+$colorFocus: blue;
+$colorSuccess: green;
+$colorWarning: orange;
+$colorError: red;
+
+$colorBorder: #000;
+
+
+// shadows
+$boxShadow: 0 0.5em 1.75em rgba(0,0,0,0.05);
+$borderRadius: 5px;
+$borderRadiusLarge: 10px;
+
+
+//
+// transitions
+//
+$transition: 0.35s;
+$transitionLong: 1s;
+
+//
+// measurements
+//
+$sectionPadding: 6em;

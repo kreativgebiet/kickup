@@ -15,7 +15,7 @@ import { watch, server } from '../config';
 const { src, dest } = server
 
 gulp.task('sprites', () => {
-  gulp.src(join(src, 'images', '**/*.svg'))
+  gulp.src(join(src, 'images/sprites/', '**/*.svg'))
     .pipe(svgmin())
     .pipe(cheerio({
       run($) { $('[fill]').removeAttr('fill'); },
