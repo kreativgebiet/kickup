@@ -1,6 +1,6 @@
 # <img src="https://s3.eu-central-1.amazonaws.com/github-banner/kickup.jpg" style="width: 100%" alt="kickup" />
 
-[![Dependency Status](https://david-dm.org/kreativgebiet/kickup/dev-status.svg)](https://david-dm.org/kreativgebiet/kickup) [![Part of the Kreativgebiet - Laboratory Project](https://img.shields.io/badge/laboratory-project-red.svg)](http://labs.kreativgebiet.com/)
+[![Dependency Status](https://david-dm.org/kreativgebiet/kickup/dev-status.svg)](https://david-dm.org/kreativgebiet/kickup) [![Part of the Kreativgebiet - Laboratory Project](https://img.shields.io/badge/laboratory-project-red.svg)](http://labs.kreativgebiet.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/kreativgebiet/kickup.svg)](https://greenkeeper.io/)
 
 Boilerplate for your perfect front-end environment (utilizing Gulp.js, Babel, and more)
 
