@@ -49,7 +49,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-rev": "^7.1.2",
     "gulp-rucksack": "^0.1.3",
-    "gulp-sass": "^3.0.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.2.2",
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.1.0",
