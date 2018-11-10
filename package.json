@@ -40,7 +40,7 @@
     "gulp-cheerio": "^0.6.2",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.0",
-    "gulp-ejs": "^3.0.0",
+    "gulp-ejs": "^3.3.0",
     "gulp-file-include": "^1.0.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-inject": "^4.2.0",
