@@ -43,7 +43,7 @@
     "gulp-ejs": "^3.0.0",
     "gulp-file-include": "^1.0.0",
     "gulp-imagemin": "^3.1.1",
-    "gulp-inject": "^4.2.0",
+    "gulp-inject": "^4.3.3",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
