@@ -36,7 +36,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "flow-bin": "latest",
     "gulp": "^3.9.1",
-    "gulp-changed": "^2.0.0",
+    "gulp-changed": "^3.1.1",
     "gulp-cheerio": "^0.6.2",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.0",
